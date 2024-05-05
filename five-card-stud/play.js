@@ -1,18 +1,16 @@
 import {
   createCardElement,
-  draw,
+  deal,
   generateDeck,
   shuffle,
   sortDescending
 } from '/lib/cards.js'
 
-let deck = shuffle(generateDeck())
+const deck = shuffle(generateDeck())
 const main = document.querySelector('main')
 
-let hand = []
-for (let i = 0; i < 6; i++) {
-  ;[hand, deck] = draw(deck, 5)
-  hand = sortDescending(hand)
+for (let i = 0; i < 8; i++) {
+  const hand = sortDescending(deal(deck, 5))
   const handElement = document.createElement('div')
   handElement.classList.add('hand')
   for (const card of hand) {
