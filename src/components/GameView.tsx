@@ -1,4 +1,4 @@
-import { Game } from 'data/Game'
+import { Game } from 'data/game'
 
 interface Props {
   game: Game

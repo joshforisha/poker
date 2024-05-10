@@ -1,3 +1,4 @@
+import GameView from 'components/GameView'
 import Header from 'components/Header'
 import NewGameForm from 'components/NewGameForm'
 import { StrictMode, useState } from 'react'
@@ -8,7 +9,9 @@ function Main() {
 
   return (
     <>
-      <Header hasGame={game !== null} onNewGame={() => setGame(null)} />
+      {game !== null && (
+        <Header onNewGame={() => setGame(null)} title={game.name} />
+      )}
       <main>
         {game ? <GameView game={game} /> : <NewGameForm setGame={setGame} />}
       </main>

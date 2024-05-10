@@ -51,3 +51,10 @@ button {
   font: inherit;
   padding: 0 var(--small);
 }
+
+select {
+  background-color: var(--gray-lighter);
+  border-radius: var(--tiny);
+  border-width: 0;
+  font: inherit;
+}

@@ -1,14 +1,12 @@
-import { Player, generatePlayers } from 'data/player'
-
-export interface GameParameters {
-  bigBet: number
-  name: string
-  numPlayers: number
-  smallBet: number
-}
+import { Deck } from 'data/deck'
+import { Player } from 'data/player'
 
 export interface Game {
   ante: number
+  bigBet: number
+  deck: Deck
   name: string
   players: Player[]
+  pot: number
+  smallBet: number
 }

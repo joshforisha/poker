@@ -1,22 +1,26 @@
+import { Card } from 'data/card'
+
 export default interface Player {
   cash: number
+  hand: Card[]
   name: string
 }
 
 export function generateName(): string {
-  return `Name${Math.floor(Math.random() * 89 + 10)}`
+  return `Player${Math.floor(Math.random() * 89 + 10)}`
 }
 
-export function generatePlayer({ cash, name }: Partial<Player>): Player {
+export function generatePlayer({ cash, name }: Partial<Player> = {}): Player {
   return {
     cash: cash ?? 0,
+    hand: [],
     name: name ?? generateName()
   }
 }
 
 export function generatePlayers(num: number): Player[] {
   const players = []
-  for (let i = 0; i < numPlayers; i++) {
+  for (let i = 0; i < num; i++) {
     players.push(generatePlayer())
   }
   return players

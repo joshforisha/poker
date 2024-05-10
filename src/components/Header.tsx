@@ -17,15 +17,15 @@ const Title = styled.span`
 `
 
 interface Props {
-  hasGame: boolean
   onNewGame: () => void
+  title: string
 }
 
-export default function Header({ hasGame, onNewGame }: Props) {
+export default function Header({ onNewGame, title }: Props) {
   return (
     <Container>
-      <Title>Poker</Title>
-      {hasGame && <button onClick={onNewGame}>New Game</button>}
+      <Title>{title}</Title>
+      <button onClick={onNewGame}>New Game</button>
     </Container>
   )
 }
