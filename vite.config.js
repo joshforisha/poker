@@ -6,8 +6,7 @@ export default defineConfig({
   resolve: {
     alias: {
       components: '/src/components',
-      data: '/src/data',
-      pages: '/src/pages'
+      data: '/src/data'
     }
   }
 })

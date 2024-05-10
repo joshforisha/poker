@@ -2,10 +2,18 @@ import styled from 'styled-components'
 
 const Container = styled.header`
   align-items: center;
-  background-color: var(--gray-darkest);
+  background-color: var(--gray-darker);
   display: flex;
   height: var(--large);
-  padding: 0 var(--medium);
+  justify-content: space-between;
+  padding: var(--small);
+  position: sticky;
+  top: 0;
+`
+
+const Title = styled.span`
+  font-size: 1.25rem;
+  font-weight: 500;
 `
 
 interface Props {
@@ -16,7 +24,7 @@ interface Props {
 export default function Header({ hasGame, onNewGame }: Props) {
   return (
     <Container>
-      <span>Poker</span>
+      <Title>Poker</Title>
       {hasGame && <button onClick={onNewGame}>New Game</button>}
     </Container>
   )

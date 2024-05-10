@@ -1,18 +1,23 @@
 import Header from 'components/Header'
-import { StrictMode, useStore } from 'react'
+import NewGameForm from 'components/NewGameForm'
+import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 
 function Main() {
   const [game, setGame] = useState(null)
 
   return (
-    <StrictMode>
-      <Header hasGame={game !== undefined} onNewGame={() => setGame(null)} />
+    <>
+      <Header hasGame={game !== null} onNewGame={() => setGame(null)} />
       <main>
         {game ? <GameView game={game} /> : <NewGameForm setGame={setGame} />}
       </main>
-    </StrictMode>
+    </>
   )
 }
 
-createRoot(document.getElementById('App')).render(Main)
+createRoot(document.getElementById('App')).render(
+  <StrictMode>
+    <Main />
+  </StrictMode>
+)

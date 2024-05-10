@@ -43,3 +43,11 @@ body {
   font-family: system-ui, sans-serif;
   margin: 0;
 }
+
+button {
+  background-color: var(--gray-lighter);
+  border-radius: var(--tiny);
+  border-width: 0;
+  font: inherit;
+  padding: 0 var(--small);
+}
